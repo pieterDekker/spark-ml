@@ -1,3 +1,4 @@
 # Ignore data files
 *.csv
 demo-database/data/
+__pycache__

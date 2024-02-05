@@ -5,19 +5,19 @@ import spark_utils
 def main():
     session, _ = spark_utils.create_spark('stream-csv-to-kafka')
 
-    schema = StructType([\
-        StructField('id', IntegerType()),\
-        StructField('date', TimestampType()),\
-        StructField('step', IntegerType()),\
-        StructField('customer', StringType()),\
-        StructField('age', StringType()),\
-        StructField('gender', StringType()),\
-        StructField('zipCodeOri', StringType()),\
-        StructField('merchant', StringType()),\
-        StructField('zipMerchant', StringType()),\
-        StructField('category', StringType()),\
-        StructField('amount', DoubleType()),\
-        StructField('fraud', IntegerType())\
+    schema = StructType([
+        StructField('id', IntegerType()),
+        StructField('date', TimestampType()),
+        StructField('step', IntegerType()),
+        StructField('customer', StringType()),
+        StructField('age', StringType()),
+        StructField('gender', StringType()),
+        StructField('zipCodeOri', StringType()),
+        StructField('merchant', StringType()),
+        StructField('zipMerchant', StringType()),
+        StructField('category', StringType()),
+        StructField('amount', DoubleType()),
+        StructField('fraud', IntegerType())
     ])
 
     df = session.read \

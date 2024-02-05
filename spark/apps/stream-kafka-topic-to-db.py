@@ -12,17 +12,17 @@ def main():
         .option('startingOffsets', 'earliest') \
         .load()
 
-    schema = StructType([\
-        StructField('id', IntegerType()),\
-        StructField('date', TimestampType()),\
-        StructField('customer', StringType()),\
-        StructField('age', StringType()),\
-        StructField('gender', StringType()),\
-        StructField('zipCodeOri', StringType()),\
-        StructField('merchant', StringType()),\
-        StructField('zipMerchant', StringType()),\
-        StructField('category', StringType()),\
-        StructField('amount', DoubleType()),\
+    schema = StructType([
+        StructField('id', IntegerType()),
+        StructField('date', TimestampType()),
+        StructField('customer', StringType()),
+        StructField('age', StringType()),
+        StructField('gender', StringType()),
+        StructField('zipCodeOri', StringType()),
+        StructField('merchant', StringType()),
+        StructField('zipMerchant', StringType()),
+        StructField('category', StringType()),
+        StructField('amount', DoubleType()),
     ])
 
     url, properties = spark_utils.create_database_parameters('transactions')

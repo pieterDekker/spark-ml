@@ -1,0 +1,85 @@
+version: "3.8"
+services:
+  spark-master:
+    build: 
+      context: ./spark
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    volumes:
+       - ./spark/apps:/opt/spark-apps
+       - ./spark/data:/opt/spark-data
+    environment:
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_WORKLOAD=master
+  #------
+  spark-worker-a:
+    build: 
+      context: ./spark
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+      - "7011:7000"
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-a
+    volumes:
+       - ./spark/apps:/opt/spark-apps
+       - ./spark/data:/opt/spark-data
+  #------
+  spark-worker-b:
+    build: 
+      context: ./spark
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8080"
+      - "7012:7000"
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-b
+    volumes:
+        - ./spark/apps:/opt/spark-apps
+        - ./spark/data:/opt/spark-data
+  #------
+  demo-database:
+    image: postgres:11.7-alpine
+    volumes:
+      - ./demo-database/data:/var/lib/postgresql/data
+    ports: 
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=casa1234
+  #------
+  kafka_box:
+    image: lensesio/fast-data-dev
+    # image: lensesio/box
+    # environment:
+      # - EULA=https://licenses.lenses.io/d/?id=d70c6377-c2c3-11ee-b293-42010af01003
+    volumes:
+      - ./kafka-connect/data:/var/data
+    ports:
+      - 3030:3030
+      - 9092:9092
+      - 9093:9092
+  #------
+  python-box:
+    image: python:3.11-alpine
+    volumes:
+      - ./python-box:/opt/python-box
+    entrypoint: ["tail", "-f", "/dev/null"]
+

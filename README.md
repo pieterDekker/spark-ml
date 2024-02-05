@@ -50,3 +50,9 @@ You will be in the `/opt/spark` directory. Run `cd bin` to descend into the `/op
 ```
 
 This will start streaming the contents of `spark/data/transactions-dataset.csv` to kafka
+
+# Sources and credits
+
+Used this dataset for annotated transactions: https://www.kaggle.com/datasets/ealaxi/banksim1
+
+Used https://github.com/mvillarrealb/docker-spark-cluster as starting point for the cluster setup

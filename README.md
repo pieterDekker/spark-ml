@@ -61,3 +61,5 @@ Used https://github.com/mvillarrealb/docker-spark-cluster as starting point for 
 
 - [ ] Use Scylladb for transaction dataset. Makes it faster to sample when the dataset grows very large
 - [ ] Use Airflow for planning and submitting spark jobs
+- [ ] Data exploration: feature ranking and selection
+- [ ] Use enterprise Kafka solutions: kafka connect for streaming to and from kafka without transform, Avro for message schemas

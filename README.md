@@ -56,3 +56,8 @@ This will start streaming the contents of `spark/data/transactions-dataset.csv` 
 Used this dataset for annotated transactions: https://www.kaggle.com/datasets/ealaxi/banksim1
 
 Used https://github.com/mvillarrealb/docker-spark-cluster as starting point for the cluster setup
+
+# Ideas and Todos
+
+- [ ] Use Scylladb for transaction dataset. Makes it faster to sample when the dataset grows very large
+- [ ] Use Airflow for planning and submitting spark jobs

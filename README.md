@@ -59,7 +59,16 @@ Used https://github.com/mvillarrealb/docker-spark-cluster as starting point for 
 
 # Ideas and Todos
 
-- [ ] Use Scylladb for transaction dataset. Makes it faster to sample when the dataset grows very large
+## Todo
+
+- [ ] Use Mleap as format for model, use S3 compatible storage backend
+
+
 - [ ] Use Airflow for planning and submitting spark jobs
 - [ ] Data exploration: feature ranking and selection
 - [ ] Use enterprise Kafka solutions: kafka connect for streaming to and from kafka without transform, Avro for message schemas
+
+## Idea
+- [ ] Use Parquet for transaction dataset?
+- [ ] Use Scylladb for transaction dataset? Makes it faster to sample when the dataset grows very large
+- [ ] Use dvc for dataset versioning?

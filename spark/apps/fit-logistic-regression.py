@@ -44,8 +44,8 @@ def main():
     results = lr_model.transform(test)
     results.select('fraud','prediction').show()
 
-    transform_model.write().overwrite().save('/opt/spark-data/models/logistic-regression-transform')
-    lr_model.write().overwrite().save('/opt/spark-data/models/logistic-regression-model')
+    # transform_model.write().overwrite().save('/opt/spark-data/models/logistic-regression-transform')
+    # lr_model.write().overwrite().save('/opt/spark-data/models/logistic-regression-model')
 
     session.stop()
 

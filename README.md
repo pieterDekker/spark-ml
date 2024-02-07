@@ -61,12 +61,10 @@ Used https://github.com/mvillarrealb/docker-spark-cluster as starting point for 
 
 ## Todo
 
-- [ ] Use Mleap as format for model, use S3 compatible storage backend
-
-
+- [ ] Use Mleap as format for model, use S3 compatible storage backend for storage
 - [ ] Use Airflow for planning and submitting spark jobs
 - [ ] Data exploration: feature ranking and selection
-- [ ] Use enterprise Kafka solutions: kafka connect for streaming to and from kafka without transform, Avro for message schemas
+- [ ] Use enterprise Kafka solutions: kafka connect for streaming to and from kafka when no other action is needed, Avro for message schemas
 
 ## Idea
 - [ ] Use Parquet for transaction dataset?

@@ -4,6 +4,9 @@ x-spark-common: &spark-common
   build:
     context: ./spark
     dockerfile: Dockerfile
+    args:
+      SPARK_VERSION: 3.5.0
+      HADOOP_VERSION: 3
   volumes:
     - ./spark/apps:/opt/spark-apps
     - ./spark/data:/opt/spark-data

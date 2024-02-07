@@ -11,19 +11,19 @@ Notes
 
 * Docker installed
 
-* Docker compose  installed
+* Docker compose v2 installed
 
 ## Build the images
 
 
 ```sh
-docker-compose build
+docker compose build
 ```
 
 ## Start the services
 
 ```sh
-docker-compose up -d
+docker compose -f airflow-compose.yaml -f docker-compose.yml up -d
 ```
 
 ## Access the components
@@ -32,6 +32,7 @@ Access the Spark UI at http://localhost:8080/
 
 Access the kafka admin UI at http://localhost:3030/
 
+Access the Airflow UI at http://localhost:18080/
 
 # The spark jobs
 

@@ -2,7 +2,6 @@ import spark_utils
 import schemas
 
 from pyspark.sql import SparkSession
-from datetime import datetime
 
 from pyspark.ml.feature import VectorAssembler, OneHotEncoder, StringIndexer
 

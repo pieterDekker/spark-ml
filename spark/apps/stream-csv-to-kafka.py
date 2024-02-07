@@ -1,5 +1,4 @@
 from pyspark.sql.functions import to_json, struct, date_format
-from pyspark.sql.types import StructType, StructField, IntegerType, StringType, DoubleType, TimestampType
 import spark_utils
 import schemas
 

@@ -61,13 +61,17 @@ Used https://github.com/mvillarrealb/docker-spark-cluster as starting point for 
 # Ideas and Todos
 
 ## Todo
-
+- [ ] Extract two separate Spark steps for data preparation and model fitting
 - [ ] Use Mleap as format for model, use S3 compatible storage backend for storage
-- [ ] Use Airflow for planning and submitting spark jobs
-- [ ] Data exploration: feature ranking and selection
-- [ ] Use enterprise Kafka solutions: kafka connect for streaming to and from kafka when no other action is needed, Avro for message schemas
+- [ ] Use Apache Hive as data warehouse
+- [ ] Use cross validations for finetuning
+- [ ] Implement streaming classifier in Spark
 
-## Idea
+## Longlist
+- [ ] streaming classifier should be perpetual job (remote supervisord style?)
+- [ ] everything in k8s under tf files
 - [ ] Use Parquet for transaction dataset?
 - [ ] Use Scylladb for transaction dataset? Makes it faster to sample when the dataset grows very large
 - [ ] Use dvc for dataset versioning?
+- [ ] Data exploration: feature ranking and selection
+- [ ] Use enterprise Kafka solutions: kafka connect for streaming to and from kafka when no other action is needed, Avro for message schemas

@@ -10,12 +10,6 @@ with DAG(
     "hello-airflow-spark",
 ) as dag:
     start = DummyOperator(task_id="start", dag=dag)
-    # submit_job = DummyOperator(task_id="submit", dag=dag)
-    # submit_job = BashOperator(
-    #     task_id="submit_job",
-    #     bash_command="echo 'Hello, Spark!'",
-    #     dag=dag,
-    # )W
     submit_job = SparkSubmitOperator(
         task_id="submit_job",
         application="/opt/spark-apps/hello-spark.py",

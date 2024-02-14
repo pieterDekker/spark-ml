@@ -3,3 +3,5 @@
 demo-database/data/
 __pycache__
 airflow/logs/
+data/
+.DS_Store

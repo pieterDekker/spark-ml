@@ -7,7 +7,7 @@ def main():
     df = spark_session \
         .readStream \
         .format('kafka') \
-        .option('kafka.bootstrap.servers', 'kafka_box:9092') \
+        .option('kafka.bootstrap.servers', 'kafka-box:9092') \
         .option('subscribe', 'transactions') \
         .option('startingOffsets', 'earliest') \
         .load()

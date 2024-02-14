@@ -62,7 +62,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=casa1234
   #------
-  kafka_box:
+  kafka-box:
     image: lensesio/fast-data-dev
     volumes:
       - ./kafka-connect/data:/var/data

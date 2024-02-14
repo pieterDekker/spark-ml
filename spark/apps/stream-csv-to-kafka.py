@@ -22,7 +22,7 @@ def main():
         .write \
         .mode('append') \
         .format('kafka') \
-        .option('kafka.bootstrap.servers', 'kafka_box:9092') \
+        .option('kafka.bootstrap.servers', 'kafka-box:9092') \
         .option('topic', 'transactions') \
         .save()
     

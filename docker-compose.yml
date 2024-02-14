@@ -79,4 +79,23 @@ services:
     volumes:
       - ./python-box:/opt/python-box
     entrypoint: ["tail", "-f", "/dev/null"]
+  #------
+  cassandra:
+    image: cassandra:3.11
+    volumes:
+      - cassandra-volume:/var/lib/cassandra
+    ports:
+      - 9042:9042
+  cassandra-init:
+    image: cassandra:3.11
+    volumes:
+      - ./spark/data/transactions-dataset-for-cassandra.csv:/data/transactions-dataset.csv
+      - ./spark/data/limit20-for-cassandra.csv:/data/limit20.csv
+      - ./cassandra/init.cql:/opt/cassandra-init/init.cql
+      - ./cassandra/init.sh:/opt/cassandra-init/init.sh
+    entrypoint: ["bash"]
+    command: "/opt/cassandra-init/init.sh"
+  #------
 
+volumes:
+  cassandra-volume:

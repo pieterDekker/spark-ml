@@ -1,12 +1,9 @@
 import argparse
 from os import path
 
-import sys
 import spark_utils
-import schemas
 
 from pyspark.sql import SparkSession
-from pyspark.sql import Row
 
 from pyspark.ml.feature import VectorAssembler, OneHotEncoder, StringIndexer
 

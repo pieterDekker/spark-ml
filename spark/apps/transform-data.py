@@ -2,14 +2,10 @@ import argparse
 from os import path
 
 import spark_utils
-import schemas
 
 from pyspark.sql import SparkSession
 
 from pyspark.ml.pipeline import PipelineModel
-
-import mleap.pyspark
-from mleap.pyspark.spark_support import SimpleSparkSerializer
 
 def main(app_name, keyspace, table, model_path, transformed_data_path):
     session: SparkSession

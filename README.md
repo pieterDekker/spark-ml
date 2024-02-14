@@ -61,11 +61,16 @@ Used https://github.com/mvillarrealb/docker-spark-cluster as starting point for 
 # Ideas and Todos
 
 ## Todo
-- [ ] Extract two separate Spark steps for data preparation and model fitting
-- [ ] Use Mleap as format for model, use S3 compatible storage backend for storage
 - [ ] Use Apache Hive as data warehouse
+- [x] Use Apache Cassandra as data warehouse _High memory usage, not ideal, but works for now_
+- [x] Extract separate Spark steps for data preparation and model fitting
+- [x] Make the parameters for the spark apps injectable
+- [ ] Implement model validation
+- [ ] Use Mleap as format for model
+- [ ] Schedule monthly reports and backfill
 - [ ] Use cross validations for finetuning
 - [ ] Implement streaming classifier in Spark
+- [ ] Fix airflow scheduler resource usage, see [here](https://stackoverflow.com/questions/42419834/airbnb-airflow-using-all-system-resources)
 
 ## Longlist
 - [ ] streaming classifier should be perpetual job (remote supervisord style?)
@@ -75,3 +80,9 @@ Used https://github.com/mvillarrealb/docker-spark-cluster as starting point for 
 - [ ] Use dvc for dataset versioning?
 - [ ] Data exploration: feature ranking and selection
 - [ ] Use enterprise Kafka solutions: kafka connect for streaming to and from kafka when no other action is needed, Avro for message schemas
+
+## Dead list
+    Features that did not make it  (yet)
+- [ ] use S3 compatible storage backend for model storage
+
+    _using the hadoop-aws and aws-java-sdk-core jars should work, but doesn't (compiled hadoop version is 3.3.4, according to spark context)_

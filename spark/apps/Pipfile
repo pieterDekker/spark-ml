@@ -5,8 +5,11 @@ name = "pypi"
 
 [packages]
 pyspark = "*"
+mleap = "*"
+apache-airflow = "*"
+apache-airflow-providers-apache-spark = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.8"
